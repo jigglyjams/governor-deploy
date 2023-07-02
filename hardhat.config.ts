@@ -3,6 +3,7 @@ import { config as dotenvConfig } from "dotenv";
 import type { HardhatUserConfig } from "hardhat/config";
 import type { NetworkUserConfig } from "hardhat/types";
 import { resolve } from "path";
+import "@nomiclabs/hardhat-etherscan"; // add the import of the plugin
 
 import "./tasks/accounts";
 import "./tasks/deploy";
@@ -69,6 +70,7 @@ const config: HardhatUserConfig = {
       polygon: process.env.POLYGONSCAN_API_KEY || "",
       polygonMumbai: process.env.POLYGONSCAN_API_KEY || "",
       sepolia: process.env.ETHERSCAN_API_KEY || "",
+      goerli: process.env.ETHERSCAN_API_KEY || ""
     },
   },
   gasReporter: {
